@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import dynamic from 'next/dynamic';
+import { RESUME_URL } from '@/utils/links';
 
 const HeroScene = dynamic(() => import('@/components/3d/HeroScene'), {
   ssr: false,
@@ -96,13 +97,16 @@ export default function HeroSection() {
               Explore Portfolio
             </motion.button>
 
-            <motion.button
+            <motion.a
+              href={RESUME_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.05, boxShadow: '0 0 20px #b200ff' }}
               whileTap={{ scale: 0.95 }}
               className="btn-neon border-purple-neon text-purple-neon"
             >
               Download Resume
-            </motion.button>
+            </motion.a>
 
             <motion.button
               whileHover={{ scale: 1.05 }}

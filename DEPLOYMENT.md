@@ -278,14 +278,14 @@ NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=xxxxxxxxxxxxx
 
 6. **Install EmailJS:**
 ```bash
-npm install emailjs-com
+npm install @emailjs/browser
 ```
 
 7. **Integrate in Contact Form:**
 ```typescript
 // src/components/sections/ContactSection.tsx
 
-import emailjs from 'emailjs-com';
+import emailjs from '@emailjs/browser';
 
 const handleSubmit = async (e: React.FormEvent) => {
   e.preventDefault();

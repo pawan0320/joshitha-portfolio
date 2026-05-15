@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import { RESUME_URL } from '@/utils/links';
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -61,13 +62,16 @@ export default function Navigation() {
         </div>
 
         {/* Resume Button */}
-        <motion.button
+        <motion.a
+          href={RESUME_URL}
+          target="_blank"
+          rel="noopener noreferrer"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           className="hidden md:block btn-neon"
         >
           Resume
-        </motion.button>
+        </motion.a>
 
         {/* Mobile Menu Button */}
         <button
@@ -99,12 +103,17 @@ export default function Navigation() {
                 </motion.span>
               </Link>
             ))}
-            <motion.button
+            <motion.a
+              href={RESUME_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
               className="btn-neon w-full mt-4"
+              onClick={() => setIsMobileOpen(false)}
             >
               Resume
-            </motion.button>
+            </motion.a>
           </div>
         </motion.div>
       )}
